@@ -62,6 +62,7 @@ class Main{
 		$pageinfo = $uinfo;
 
 		if( $uinfo["type"] == "f" ) {
+			$pageinfo["region"] = arr2option(gi("region"));
 		} else if( $uinfo["type"] == "u") {
 		} else if( $uinfo["type"] == "a") {
 		}

@@ -2,20 +2,16 @@
 	<!-- Dropdown for Create Account -->
 	<ul id="dropdownaccount" class="dropdown-content">
 		<li class="<?php pit('active', g("curpage")==='profile');?>"><a href="<?php echo BASE."profile" ;?>" >Profile&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size:13px;" class="grey-text">for myinfo</span></a></li>
-		<li class="<?php pit('active', g("curpage")==='account');?>"><a href="<?php echo BASE."account" ;?>" >Account&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size:13px;" class="grey-text">for setting</span></a></li>
 		<li class=""><a href="<?php echo HOST."?logout"; ?>" >Logout&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size:13px;" class="grey-text">for exit</span></a></li>
 	</ul>
 
 	<!-- NavBar -->
 	<div class="navbar-fixed" >
 		<nav class="teal darken-3" role="navigation">
-			<div class="nav-wrapper">
+			<div class="nav-wrapper container">
 				<a href="" class="brand-logo"><?php echo gi("myname"); ?></a>
 				<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-				<ul id="nav-mobile" class="right hide-on-med-and-down">
-					<li class="<?php pit('active', g("curpage")==='aboutus');?>"><a href="<?php echo BASE."aboutus"; ?>">About Us</a></li>
-					<li class="<?php pit('active', g("curpage")==='contactus');?>"><a href="<?php echo BASE."contactus"; ?>">Contact Us</a></li>
-
+				<ul class="right hide-on-med-and-down" style="" >
 					<?php
 					if (User::islogin()) {
 					?>
@@ -34,7 +30,7 @@
 					}
 					?>
 
-					<form class="right" action="<?php echo BASE."search"; ?>"  >
+					<form class="right hide" action="<?php echo BASE."search"; ?>"  >
 						<div class="input-field teal darken-4">
 							<input id="search" type="search" placeholder="Search Tutors" autocomplete="off" name="q" >
 							<label for="search"><i class="material-icons">search</i></label>
@@ -48,9 +44,6 @@
 
 	<!-- SideNav -->
 	<ul class="side-nav" id="mobile-demo">
-		<li class="<?php pit('active', g("curpage")==='aboutus');?>"><a href="<?php echo BASE."aboutus"; ?>">About Us</a></li>
-		<li class="<?php pit('active', g("curpage")==='contactus');?>"><a href="<?php echo BASE."contactus"; ?>">Contact Us</a></li>
-
 		<?php
 		if (User::islogin()) {
 		?>
@@ -60,20 +53,13 @@
 		}
 		else {
 		?>
-		<li class="<?php pit('active', g("curpage")==='login');?>"><a href="<?php echo BASE."login"; ?>">Login</a></li>
-		<li class="<?php pit('active', g("curpage")==='signup');?>">
-			<a href="<?php echo BASE."signup" ;?>">Signup&nbsp;&nbsp;&nbsp;&nbsp;
-			<span style="font-size:13px;" class="grey-text">for Students</span></a>
-		</li>
-		<li class="<?php pit('active', g("curpage")==='joinus');?>">
-			<a href="<?php echo BASE."joinus" ;?>">Joinus&nbsp;&nbsp;&nbsp;&nbsp;
-			<span style="font-size:13px;" class="grey-text">for Tutors</span></a>
-		</li>
+			<li class="<?php pit('active', g("curpage")==='login');?>"><a href="<?php echo BASE."login"; ?>">Login</a></li>
+			<li class="<?php pit('active', g("curpage")==='signup');?>"><a href="<?php echo BASE."signup"; ?>">Signup</a></li>
 		<?php
 		}
 		?>
 
-		<div class="row grey lighten-3">
+		<div class="row grey lighten-3 hide">
 			<form class="col s12">
 				<div class="row">
 					<div class="input-field col s12">

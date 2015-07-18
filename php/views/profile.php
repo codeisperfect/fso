@@ -1,7 +1,7 @@
 <?php
 load_view("template/top.php");
 load_view("template/navbarnew.php");
-$tabid=1;
+$tabid=2;
 ?>
 	<main>
 		<div class="container">
@@ -73,11 +73,8 @@ $tabid=1;
 					<div class="col s12">
 						<ul class="tabs"  >
 							<li class="tab col s2"><a id="profiletabs1" <?php pit('class="active"', $tabid==1); ?> href="#tab_profile">Profile</a></li>
-							<li class="tab col s2"><a id="profiletabs5" <?php pit('class="active"', $tabid==5); ?>  href="#tab_topics">Topics</a></li>
-							<li class="tab col s2"><a id="profiletabs2" <?php pit('class="active"', $tabid==2); ?> href="#tab_calendar">Calendar</a></li>
-							<li class="tab col s2"><a id="profiletabs4" <?php pit('class="active"', $tabid==4); ?> href="#tab_reviews">Reviews</a></li>
-							<li class="tab col s2" style="<?php pit("visibility:hidden", $tid != User::loginId()); ?>" ><a id="profiletabs3" <?php pit('class="active"', $tabid==3); ?> href="#tab_classes">Classes</a></li>
-							<li class="tab col s2" style="<?php pit("visibility:hidden", $tid != User::loginId()); ?>" ><a id="profiletabs5" <?php pit('class="active"', $tabid==5); ?> href="#tab_account">Account</a></li>
+							<li class="tab col s2"><a id="profiletabs3" <?php pit('class="active"', $tabid==3); ?>  href="#tab_adddriver">Add Driver</a></li>
+							<li class="tab col s2"><a id="profiletabs2" <?php pit('class="active"', $tabid==2); ?>  href="#tab_topics">Driver Allocation</a></li>
 						</ul>
 					</div>
 					<div id="tab_profile" class="col s12 offset-l1">
@@ -85,29 +82,14 @@ $tabid=1;
 						load_view("profile_about.php", $inp);
 					?>
 					</div>
-					<div id="tab_calendar" class="col s12">
-					<?php
-//						load_view("Template/profile_calendar.php",Fun::mergeifunset($calinfo,array("tid"=>$tid)) );
-					?>
-					</div>
-					<div id="tab_classes" class="col s12">
-					<?php
-//						load_view("Template/profile_classes.php", $myclasses);
-					?>
-					</div>
-					<div id="tab_reviews" class="col s12">
-					<?php
-//						load_view("Template/profile_reviews.php", Fun::mergeifunset($inp, array("reviewname" => "studentname")));
-					?>
-					</div>
 					<div id="tab_topics" class="col s12">
 					<?php
-//						load_view("Template/profile_topics.php",Fun::mergeifunset($topicinfo,array("tid"=>$tid,'minfees'=>$jsonArray['minfees'])));
+						load_view("profile_driver.php", $inp);
 					?>
 					</div>
-					<div id="tab_account" class="col s12">
+					<div id="tab_adddriver" class="col s12">
 					<?php
-//						load_view("Template/moneyaccount.php", Fun::mergeifunset($inp, array("tid"=>$tid)));
+						load_view("profile_adddriver.php", $inp);
 					?>
 					</div>
 				</div>
@@ -120,5 +102,5 @@ $tabid=1;
 <?php
 load_view("template/footer.php");
 //load_view("popup.php",array("name"=>"timeslot", "title" => "Please select your free slots"));
-load_view("template/bottom.php" );
+load_view("template/bottom.php", array("js" => array("https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places") ) );
 ?>

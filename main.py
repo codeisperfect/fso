@@ -12,10 +12,10 @@ def writefd(fd,data):
 def read_file(fn):
 	return readfd(open(fn));
 
-
-
 def write_file(fn,data):
 	writefd(open(fn,'w'),data);
+
+
 
 from BeautifulSoup import BeautifulSoup
 

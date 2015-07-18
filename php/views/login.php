@@ -88,7 +88,7 @@ load_view("template/navbarnew.php");
         </div>
 
         <div class="col s12 l6" style='' >
-          <div class="card-panel">
+          <div class="card-panel" >
           <br>
             <div class="row">
               <div class="col s12 l10 offset-l1">
@@ -96,13 +96,13 @@ load_view("template/navbarnew.php");
               </div>
             </div>
             <div class="row">
-              <div class="col s12 l10 offset-l1">
+              <div class="col s12 l10 offset-l1"  >
                 <h6 class="grey-text"><i class="material-icons tiny left">chevron_right</i>Only Students can sign up from this section.</h6>
               </div>
             </div>
             <div class="row">
-              <div class="col s12 l10 offset-l1">
-                <a href="<?php echo HOST.""; ?>" class="btn-large waves-effect waves-light blue darken-3" style="width:100%;">Sign Up with facebook</a>
+              <div class="col s12 l10 offset-l1"  >
+                <a href="<?php echo HOST.""; ?>" class="btn-large waves-effect waves-light blue darken-3" style="width:100%;" >Sign Up with facebook</a>
               </div>
             </div>
             <div class="row" style='' >

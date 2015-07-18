@@ -2,7 +2,7 @@
 
 $_ginfo["default_user_type"]='f';
 
-$_ginfo["myname"] = "Players";
+$_ginfo["myname"] = "Drivers";
 $_ginfo["mysite"] = "www.players.com";
 
 $view_default=array(
@@ -114,15 +114,12 @@ $_ginfo["action_constrain"]=array(
 	"addexercise"=>array("need"=>array("title","content")),
 	"changepassword"=>array("need"=>array("opassword","npassword"),"users"=>"all"),
 	"saveuserdetails"=>array("need"=>array("uid"),"users"=>"all"),
-	"autoscroll"=>array("need"=>array("min", "max", "minl", "maxl", "isloadold"))
+	"autoscroll"=>array("need"=>array("min", "max", "minl", "maxl", "isloadold")),
+	"allocate" => array("need" => array("fromloc", "toloc", "rid", "did")),
+	"adddriver" => array("need" => array("name", "phone", "email"))
 );
 
 
-$_ginfo["autoinsert"]=array(
-	"addcontent"=>array("fixed"=>array("time","uid"),"table"=>"content"),
-	"addform"=>array("fixed"=>array("time"),"table"=>"forms"),
-	"addexercise"=>array("fixed"=>array("time","uid"),"table"=>"exercise")
-);
 
 $_ginfo["error"]=array(
 	"-1"=>"Session expired",
@@ -176,19 +173,15 @@ $_ginfo["headerddlist"]=array(
 
 
 $_ginfo["autoscroll"]=array(
-	"personmsg"=>array(
-		"query"=>"mymsgperson",
-		"sort"=>"order by id desc",
-		"minl"=>2,
-		"key"=>"id",
-		"load_view"=>"template/dispmsg.php",
-		"filterfunc"=>"loadchat"
-	)
+);
+
+$_ginfo["region"] = array("Delhi", "Mumbai", "Banglore");
+
+$_ginfo["autoinsert"] = array(
+	"allocate" => array("fixed"=>array("time","uid"), "table"=>"allalloc"),
+	"adddriver" => array("fixed" => array("time", "uid"), "table" => "drivers")
 );
 
 
-//$_ginfo["adminmail"] = "vaibhav@admin.com";
-
-$_ginfo["isrealmail"] = false;
 
 ?>

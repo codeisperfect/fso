@@ -44,5 +44,19 @@ class Actiondisp{
 			echo json_encode($outp)."\n";
 		load_view("template/profile_aboutdisp.php", Funs::getprofile_about($data["uid"]));
 	}
+
+	function allalloc($data, $printjson = true) {
+		$outp = ao();
+		if($printjson)
+			echo json_encode($outp)."\n";
+		load_view("template/allalloc.php", Funs::getprofile_about(User::loginId()));
+	}
+
+	function alldrivers($data, $printjson = true) {
+		$outp = ao();
+		if($printjson)
+			echo json_encode($outp)."\n";
+		load_view("template/alldriver.php", Funs::getprofile_about(User::loginId()));
+	}
 }
 ?>

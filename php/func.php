@@ -556,7 +556,7 @@
 
 	function f($content) {
 		global $msvar;
-		$af = function($inp, $ind) use ($content, $msvar) {
+		$af = function($inp, $ind=0) use ($content, $msvar) {
 			$content = '$foutput  = '.$content.';';
 			eval($content);
 			return $foutput;

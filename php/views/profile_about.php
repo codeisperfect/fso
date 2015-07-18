@@ -25,7 +25,7 @@
 				<?php hidinp("uid", $id); ?>
 				<div  style='' >
 					<?php
-						$formneeds = array("name" => "Name", "phone" => "Mobile", "fbid" => "Facebook Id", "skypeid" => "SkypeId");
+						$formneeds = array("name" => "Name", "phone" => "Mobile");
 						$formkeys = array_keys($formneeds);
 						$count = 0;
 						for($i=0; $i< ceil(count($formneeds)/2); $i++) {
@@ -55,7 +55,7 @@
  					</div>
 
 					<div class="row">
-						<textarea placeholder="Your Address" class="materialize-textarea" name="address" ><?php echo convchars("address"); ?></textarea>
+						<textarea placeholder="Your Address" class="materialize-textarea" name="address" ><?php echo convchars($inp["address"]); ?></textarea>
 					</div>
 					<div class="row">
 					<div class="input-field col s12">

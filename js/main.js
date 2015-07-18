@@ -1,6 +1,6 @@
 $( document ).ready(function(){
 	$(function () {
-	  $('[data-toggle="tooltip"]').tooltip()
+		$('[data-toggle="tooltip"]').tooltip()
 	});
 	$('.dropdown-menu').click(function(e) {
 		e.stopPropagation();
@@ -270,17 +270,17 @@ var page = {
 	contactus:function() {
 		var myCenter = new google.maps.LatLng( 28.5453552,77.1923144 );
 		function initialize() {
-		  var mapCanvas = document.getElementById('map-canvas');
-		  var mapOptions = {
-		    center:myCenter,
-		    zoom: 17,
-		    mapTypeId: google.maps.MapTypeId.ROADMAP
-		  }
-		  var map = new google.maps.Map(mapCanvas, mapOptions);
-		  var marker=new google.maps.Marker({
-		    position:myCenter,
-		  });
-		  marker.setMap(map);
+			var mapCanvas = document.getElementById('map-canvas');
+			var mapOptions = {
+			center:myCenter,
+			zoom: 17,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+			}
+			var map = new google.maps.Map(mapCanvas, mapOptions);
+			var marker=new google.maps.Marker({
+			position:myCenter,
+			});
+			marker.setMap(map);
 		}
 		google.maps.event.addDomListener(window, 'load', initialize);
 	},
@@ -293,6 +293,40 @@ var page = {
 		// 	dateFormat:"dd-mm-yy"
 		// });
 
+		function initialize() {
+			var mapOptions = {
+				center: new google.maps.LatLng(-33.8688, 151.2195),
+				zoom: 13
+			};
+			var map = new google.maps.Map(document.getElementById('map-canvas'),
+			mapOptions);
+
+			var input = document.getElementById('local1fromloc');
+			
+			var input2 = document.getElementById('local1toloc');
+			
+			
+
+			var autocomplete = new google.maps.places.Autocomplete(input);
+			var autocomplete2 = new google.maps.places.Autocomplete(input2);
+			
+
+			google.maps.event.addListener(autocomplete, 'place_changed', function() {
+				var place = autocomplete.getPlace();
+				if (!place.geometry) {
+					return;
+				}
+			});
+			
+			google.maps.event.addListener(autocomplete2, 'place_changed', function() {
+				var place = autocomplete2.getPlace();
+				if (!place.geometry) {
+					return;
+				}   
+			});
+		}
+		google.maps.event.addDomListener(window, 'load', initialize);
+		$(".select2").select2();
 	},
 	chat:function() {
 		$(".select2").select2();

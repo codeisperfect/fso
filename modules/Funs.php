@@ -38,28 +38,30 @@ abstract class Funs{
 		return $mail->Send();
 	}
 
-	public static function getprofile_about($uid, $uinfo = null) {
+	public static function getprofile_about($uid, $uinfo = null, $need = "all") {
 		if($uinfo == null) {
 			$uinfo = User::userProfile($uid);
 		}
+		$needquery = array("drivers" => "select * from drivers order by id desc", "allalloc" => "select allalloc.fromloc, allalloc.toloc, drivers.name, drivers.phone, drivers.email from allalloc left join drivers on drivers.id = allalloc.did where allalloc.uid = 0 or true order by allalloc.id desc" );
+		$applyfunc = array();//"drivers" => f('Fun::dbarrtooption($inp, "id", "name")') );
+		setift($need, array_keys($needquery), $need == "all");
 		$pageinfo = applyconv( $uinfo );
 		$pageinfo["isme"] = (lid() == $uid);
 		$pageinfo["isadmin"] = (User::loginType() == "a");
 		$pageinfo["ismea"] = ($pageinfo["isadmin"] || $pageinfo["isme"]);
 		$pageinfo["dispbioform"] = ($pageinfo["isme"] && $uinfo["sign"] == "");
+
+		foreach($need as $i){
+			$pageinfo[$i] = Sqle::getA($needquery[$i]);
+			if(isset($applyfunc[$i])) {
+				$pageinfo[$i] = $applyfunc[$i]($pageinfo[$i]);
+			}
+		}
+		if(in_array("drivers", $need)) {
+			$pageinfo["drivers_select"] = Fun::dbarrtooption($pageinfo["drivers"], "id", "name");
+		}
+
 		return $pageinfo;
-	}
-
-	public static function cansend(){
-		if(User::isloginas('u'))
-			$query="select id from users where type='a'";
-		else if(User::isloginas('a'))
-			$query="select id from users where type='u'";
-		else
-			$query="select * from users";
-
-		$query1="select users.name,users.id,users.profilepic from (".$query.")selectedpeople left join users on users.id=selectedpeople.id";
-		return Sqle::getArray($query1);
 	}
 
 }
