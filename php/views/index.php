@@ -15,9 +15,9 @@ load_view("template/navbarnew.php",$inp);
         <div class="col s12">
           <div class="rw-words-1">
             <h5 class="center">
-              Get an Expert Adviser for
+              Get an Help
               <b>
-                Any Sports, Any Time
+                Any one, Any Time We work in a good style.
               </b>
               !
             </h5>
@@ -26,12 +26,12 @@ load_view("template/navbarnew.php",$inp);
               <b>
                 Better
               </b>
-              than what you are !
+              than what you are !We work in a good style.
             </h5>
             <h5 class="center">
-              We are for
+              We are for good people.
               <b>
-                Stud players just like you !
+                We work in a good style.
               </b>
             </h5>
           </div>
@@ -57,7 +57,7 @@ load_view("template/navbarnew.php",$inp);
           </i>
         </h2>
         <h5 class="header center grey-text text-darken-2">
-          Message us your problems.
+          We work in a good style.
         </h5>
       </div>
       <div class="col s12 m4">
@@ -66,7 +66,7 @@ load_view("template/navbarnew.php",$inp);
           </i>
         </h2>
         <h5 class="header center grey-text text-darken-2">
-          Schedule your goals
+          We work in a good style.
         </h5>
       </div>
       <div class="col s12 m4">
@@ -75,7 +75,7 @@ load_view("template/navbarnew.php",$inp);
           </i>
         </h2>
         <h5 class="header center grey-text text-darken-2">
-          Start precticing
+          We work in a good style.
         </h5>
         <p class="light">
         </p>
@@ -91,7 +91,7 @@ load_view("template/navbarnew.php",$inp);
         <!-- random image -->
         <div class="caption center-align">
           <h3>
-            We are very stud people.
+            We work in a good style.
           </h3>
           <h5 class="light grey-text text-lighten-3">
             you will help you in playing.
@@ -103,7 +103,7 @@ load_view("template/navbarnew.php",$inp);
         <!-- random image -->
         <div class="caption left-align">
           <h3>
-            Just message us very soon.
+            We work in a good style.
           </h3>
           <h5 class="light grey-text text-lighten-3">
             You need to pay us for help.
@@ -130,7 +130,7 @@ load_view("template/navbarnew.php",$inp);
             We are good people.
           </h3>
           <h5 class="light grey-text text-lighten-3">
-            here is our helpline.
+            We work in a good style.
           </h5>
         </div>
       </li>
@@ -153,19 +153,19 @@ load_view("template/navbarnew.php",$inp);
         <div class="col s12">
           <ul id="whyus_list" style="margin-top:0px;">
             <li>
-              770+ Players and 57+ Sports are using us.
+              We work in a good style.
             </li>
             <li>
-              Learn only from Expert people.
+              We work in a good style.
             </li>
             <li>
-              Take help at the comfort of your time.
+              We work in a good style.
             </li>
             <li>
-              Select the best Helpers.
+              We work in a good style.
             </li>
             <li>
-              Because we care about Quality more.
+              We work in a good style.
             </li>
           </ul>
         </div>
