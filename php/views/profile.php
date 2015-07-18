@@ -1,7 +1,7 @@
 <?php
 load_view("template/top.php");
 load_view("template/navbarnew.php");
-$tabid=2;
+$tabid=1;
 ?>
 	<main>
 		<div class="container">
