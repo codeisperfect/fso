@@ -1,3 +1,6 @@
+<?php
+include "includes/app.php";
+?>
 <html>
 <head>
 	
@@ -6,14 +9,14 @@
 	<script type="text/javascript" src="http://maps.google.com/maps?file=api&v=2&key=ABQIAAAA7j_Q-rshuWkc8HyFI4V2HxQYPm-xtd00hTQOC0OXpAMO40FHAxT29dNBGfxqMPq5zwdeiDSHEPL89A" ></script>
 	<script type="text/javascript">
 		function calmsdistace() {
-			var geocoder, loca1 = "New Delhi, India", loca2 = "IIT Delhi, New Delhi, India", gDir, location1, location2;
+			var geocoder, loca1 = "<?php echo get("to", "New Delhi, India"); ?>", loca2 = "<?php echo get("from", "IIT Delhi, New Delhi, India"); ?>", gDir, location1, location2;
 			function initialize(){
 				geocoder = new GClientGeocoder();
 				gDir = new GDirections();
 				GEvent.addListener(gDir, "load", function() {
 					var drivingDistanceKilometers = gDir.getDistance().meters / 1000;
-					var resul = "fulloc1=" + location1.address + "&loc1lat=" + location1.lat + "&loc1lon=" + location1.lon + "&fulloc2=" + location2.address + "&loc2lat=" + location2.lat + "&loc2lon=" + location2.lon + "&dist=" + drivingDistanceKilometers+"&duration_min="+(gDir.getDuration ().seconds/60)+"&time="+"";
-					alert(resul);
+					var resul = {"dist": drivingDistanceKilometers, "duration_min": (gDir.getDuration ().seconds/60) };
+					window.parent.sainiji(resul);
 				});
 			}
 
@@ -38,6 +41,12 @@
 			initialize();
 			showLocation();
 		}
+		calmsdistace();
+
 	</script>
 </body>
 </html>
+
+<?php
+closedb();
+?>

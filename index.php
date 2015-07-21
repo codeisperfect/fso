@@ -257,7 +257,7 @@
 
           <p align="left"><a class="btn btn-primary" id="add_waypoint" href="javascript:void(0)" onClick="addWaypoints('waypoints')">Add Waypoint</a></p>
           <p align="left">
-            <a class="btn btn-info refresh_vehicles_and_fare"  id="refresh_vehicles_and_fare" href="javascript:void(0)">
+            <a class="btn btn-info refresh_vehicles_and_fare"  id="refresh_vehicles_and_fare" href="javascript:void(0)" onclick="req_dist();" >
               Refresh For Vehicles And Fare
             </a>
           </p>
@@ -332,10 +332,11 @@
   <div class="vehicle_outer_block content-common">
 
     <p align="left">
-      <a class="btn btn-info refresh_vehicles_and_fare"  href="javascript:void(0)">
+      <a class="btn btn-info refresh_vehicles_and_fare"  href="javascript:void(0)" onclick="req_dist();" >
         Refresh For Vehicles And Fare
       </a>
     </p>
+<div id="mohit" ></div>
 
     <div class="nature-of-goods-block">
       <div class="inputBlock">
@@ -437,6 +438,14 @@
             <p class="fare-details-each">
               <span class="field"> Duration Charge </span>
               <span class="value duration_charge">  </span>
+            </p>
+            <p class="fare-details-each">
+              <span class="field"> Base Km Charge </span>
+              <span class="value base_km_charge">  </span>
+            </p>
+            <p class="fare-details-each">
+              <span class="field"> Extra Km Charge </span>
+              <span class="value extra_km_charge">  </span>
             </p>
 
             <div class="distance_split"></div>
@@ -677,5 +686,12 @@
 <script>
   var options={valueNames:["name"]};
 </script>
+<script type="text/javascript">
+
+</script>
+
+<iframe style="height:0px;width:0px;" src="" id="caldistinframe" ></iframe>
 </body>
 </html>
+
+
