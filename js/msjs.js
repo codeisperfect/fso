@@ -705,7 +705,6 @@ function fare_break(inpvname) {
 		vcles[i].setAttribute("data-myname", vname);
 		vcles[i].setAttribute("onclick", "fare_break($(this).attr('data-myname'))");
 
-		console.log(needtofill.toSource());
 		$(vcles[i]).find(".vehicle_fare").find("span").html(total_charge);
 		if(inpvname == vname)
 			break;

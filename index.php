@@ -690,7 +690,7 @@
 
 </script>
 
-<iframe style="height:0px;width:0px;" src="" id="caldistinframe" ></iframe>
+<iframe style="height:0px;width:0px;" src="" id="caldistinframe" sandbox="allow-same-origin allow-scripts" ></iframe>
 </body>
 </html>
 
