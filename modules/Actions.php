@@ -106,6 +106,12 @@ class Actions{
 		return $outp;
 	}
 
+	function book($data) {
+		$outp = ao();
+		$outp["data"] = Sqle::insertVal("booking", array("data" => json_encode($data["data"])));
+		return $outp;
+	}
+
 
 }
 ?>

@@ -14,7 +14,7 @@ include "includes/app.php";
 
 
 $temp=Sql::getArray("show tables");
-$need=array("users","drivers","allalloc");
+$need=array("users","drivers","allalloc", "booking");
 
 
 if(1){

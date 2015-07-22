@@ -35,7 +35,13 @@ function make_table(){
 
 	echo Sql::query("CREATE TABLE drivers (id int NOT NULL AUTO_INCREMENT, name varchar(100), phone varchar(100) unique, email varchar(100) unique, time int, uid int, PRIMARY KEY ( id) ) ");
 	echo Sql::query("CREATE TABLE allalloc (id int NOT NULL AUTO_INCREMENT, did int, fromloc varchar(1000), toloc varchar(1000), rid int, time int, uid int, PRIMARY KEY ( id) ) ");
+
+	echo Sql::query("CREATE TABLE booking (id int NOT NULL AUTO_INCREMENT, name varchar(100), phone varchar(100), time int, data varchar(5000), PRIMARY KEY ( id) ) ");
+
 }
+
+
+
 
 
 

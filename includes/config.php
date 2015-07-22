@@ -11,7 +11,7 @@ $view_default=array(
 		"css"=>array()
 		),
 	'template/topnew.php'=>array(
-		"title"=>"Player",
+		"title"=>"Drivers",
 		"closehead"=>true,
 		"addcss"=>array()
 		),
@@ -21,9 +21,9 @@ $view_default=array(
 		"js" => array(),
 		),
 	'template/bottomnew.php'=>array(
-		"addjs"=>array(),
 		"needpopup"=>true,
-		"closebody"=>true
+		"needbody" => true,
+		"js" => array(),
 		),
 	"template/mselect.php"=>array(
 		"name"=>"",
@@ -179,7 +179,7 @@ $_ginfo["region"] = array("Delhi", "Mumbai", "Banglore");
 
 $_ginfo["autoinsert"] = array(
 	"allocate" => array("fixed"=>array("time","uid"), "table"=>"allalloc"),
-	"adddriver" => array("fixed" => array("time", "uid"), "table" => "drivers")
+	"adddriver" => array("fixed" => array("time", "uid"), "table" => "drivers"),
 );
 
 

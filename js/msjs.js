@@ -718,3 +718,17 @@ function req_dist() {
 	$("#caldistinframe").attr("src", "caldis.php?to="+encodeURI(to)+"&from="+encodeURI(from));
 }
 
+
+
+function getorderdata(){
+	var poptions = $(".preview-profile-details");
+	var sform = {};
+	for(var i=0; i<poptions.length; i++) {
+		var keyname = $(poptions[i]).find("span")[0].innerHTML;
+		sform[keyname] = $(poptions[i]).find("span")[1].innerHTML;
+	}
+	button.sendreq1({"data":sform, "action":"book"}, function(d){
+		window.location.href = window.location.href;
+	}, {});
+}
+
