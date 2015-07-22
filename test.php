@@ -1,7 +1,8 @@
 <?php
 include "includes/app.php";
 
-$config = array("needprofile" => true );
+
+getcsv();
 
 
 closedb();
