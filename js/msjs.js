@@ -677,6 +677,59 @@ function fare_break(inpvname) {
 	}
 	for( var i=0; i<vcles.length; i++) {
 		var vname = $(vcles[i]).find(".vehicle_name").html();
+		var bfare = 100;//parseFloat(krvinfo[vname].base_fare);//1.
+		var tolltax = 45;//2
+		var dur_charge = inp.duration_min*parseFloat(krvinfo[vname].travel_rate_per_min);//3
+		var threshold_distances = str2list(krvinfo[vname].threshold_distances);
+		var threshold_fares = str2list(krvinfo[vname].threshold_fares);
+		var b_km_charger = 0;
+		var b_km = 0 ;
+		var e_km_charger = threshold_fares[threshold_fares.length-1];
+		if(threshold_fares.length > 1) {
+			b_km_charger = threshold_fares[0];
+			b_km = threshold_distances[0];
+		}
+		e_km_charger = 22;
+		var my_b_charge = b_km_charger;//4
+		var my_e_charge = inp.dist > b_km ? (inp.dist - b_km)*e_km_charger : 0 ;//5
+
+		my_e_charge = my_e_charge;
+
+		var total_charge = parseInt(bfare + tolltax + dur_charge + my_b_charge + my_e_charge);
+
+		var needtofill = {"base_fare":bfare, "toll_tax": tolltax, "duration_charge": dur_charge, "base_km_charge": my_b_charge, "extra_km_charge": my_e_charge, "travel_duration": inp.duration_min, "travel_distance":inp.dist, "total_duration":inp.duration_min, "estimated_fare": total_charge};
+		for(var j in needtofill) {
+			needtofill[j] = needtofill[j].toFixed(2);
+			$("."+j).html(needtofill[j]);
+		}
+
+		vcles[i].setAttribute("data-myname", vname);
+		vcles[i].setAttribute("onclick", "fare_break($(this).attr('data-myname'))");
+
+		$(vcles[i]).find(".vehicle_fare").find("span").html(total_charge);
+		if(inpvname == vname)
+			break;
+	}
+}
+
+
+function fare_break1(inpvname) {
+	if(inpvname == null)
+		inpvname = '';
+
+//	alert(inp.toSource());
+//	inp = {dist:3.014, duration_min:9.533333333333333};
+	inp = distinfo;
+
+	var vcles = $(".vehicle_selection_block").children();
+	var rid = $("#order_geo_region_id").val();
+	var rvinfo = vinfo[rid].vehicle_map;
+	var krvinfo = {};
+	for(var i=0; i<rvinfo.length; i++) {
+		krvinfo[ rvinfo[i].vehicle.vehicle_type ] = rvinfo[i];
+	}
+	for( var i=0; i<vcles.length; i++) {
+		var vname = $(vcles[i]).find(".vehicle_name").html();
 		var bfare = parseFloat(krvinfo[vname].base_fare);//1.
 		var tolltax = 65;//2
 		var dur_charge = inp.duration_min*parseFloat(krvinfo[vname].travel_rate_per_min);//3
