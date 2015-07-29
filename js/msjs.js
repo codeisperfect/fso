@@ -679,6 +679,7 @@ function fare_break(inpvname) {
 		var vname = $(vcles[i]).find(".vehicle_name").html();
 		var bfare = 100;//parseFloat(krvinfo[vname].base_fare);//1.
 		var tolltax = 45;//2
+		var tolltax = 0;//2
 		var dur_charge = inp.duration_min*parseFloat(krvinfo[vname].travel_rate_per_min);//3
 		var threshold_distances = str2list(krvinfo[vname].threshold_distances);
 		var threshold_fares = str2list(krvinfo[vname].threshold_fares);
